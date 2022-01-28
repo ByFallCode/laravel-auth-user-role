@@ -27,3 +27,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/player', [PlayerController::class, 'index'])->name('player')->middleware('player');
 Route::get('/admin', [AdminController::class, 'index'])->name('admin')->middleware('admin');
 Route::get('/coach', [CoachController::class, 'index'])->name('coach')->middleware('coach');
+
+
+Route::resource('matches', App\Http\Controllers\MatchController::class);
+
+
+Route::resource('equipes', App\Http\Controllers\EquipeController::class);
+
+
+Route::resource('joueurs', App\Http\Controllers\JoueurController::class);
